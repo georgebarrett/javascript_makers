@@ -19,8 +19,6 @@ const candies = [
     candies.filter((object) => {
       if (object.price <= price) {
         array.push(object.name);
-      } else {
-        return [];
       }
     });
     return array;
