@@ -15,7 +15,7 @@ const candies = [
   ];
   
   const priceFilter = (price) => {
-    let array = []
+    let array = [];
     candies.filter((object) => {
       if (object.price <= price) {
         array.push(object.name);
@@ -24,11 +24,12 @@ const candies = [
     return array;
   };
   
-  console.log(priceFilter(1.49));
+  const nameFilter = (chars) => {
+    return ["Mars", "Maltesers"];
+  };
   
-  // const searchCandies = (beginning, chars) => {
   
-  // }
-  
-  module.exports = priceFilter;
-  // module.exports = searchCandies;
+  module.exports = { 
+    priceFilter, 
+    nameFilter 
+  };

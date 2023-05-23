@@ -1,13 +1,19 @@
-const priceFilter = require("./searchCandies");
+const { priceFilter, nameFilter } = require("./searchCandies.js")
+
+describe("priceFilter", () => {
+  it("returns candies bellow or equal to price", () => {
+    expect(priceFilter(1.49)).toEqual(["Mars", "Skittles"]);
+  });
+});
+
+describe("nameFilter", () => {
+  it("returns candies that start with the same letters", () => {
+    expect(nameFilter("Ma")).toEqual(["Mars", "Maltesers"]);
+  });
+});
 
 // describe("searchCandies", () => {
-// //   it("returns an empty array when nothing matches", () => {
-// //     expect(searchCandies("Ma", 10)).toBe(["Mars", "Malteasers"]);
-// //   });
+//   it("Ma, 10", () => {
+//     expect(searchCandies("Ma", 10)).toBe(["Mars", "Maltesers"]);
+//   });
 // });
-
-describe('priceFilter', () => {
-    it('returns candies bellow or equal to price', () => {
-        expect(priceFilter(1.49)).toEqual(['Mars', 'Skittles'])
-    })
-})
