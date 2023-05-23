@@ -25,7 +25,13 @@ const candies = [
   };
   
   const nameFilter = (chars) => {
-    return ["Mars", "Maltesers"];
+    let array = [];
+    candies.filter((object) => {
+      if (object.name.toLowerCase().startsWith(chars.toLowerCase())) {
+        array.push(object.name);
+      }
+    });
+    return array;
   };
   
   
