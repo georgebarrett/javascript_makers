@@ -1,4 +1,4 @@
-const { priceFilter, nameFilter } = require("./searchCandies.js")
+const { priceFilter, nameFilter, searchCandies } = require("./searchCandies.js")
 
 describe("priceFilter", () => {
   it("returns candies bellow or equal to price", () => {
@@ -12,8 +12,8 @@ describe("nameFilter", () => {
   });
 });
 
-// describe("searchCandies", () => {
-//   it("Ma, 10", () => {
-//     expect(searchCandies("Ma", 10)).toBe(["Mars", "Maltesers"]);
-//   });
-// });
+describe("searchCandies", () => {
+  it("Ma, 10", () => {
+    expect(searchCandies("Ma", 10)).toEqual(["Mars", "Maltesers"]);
+  });
+});
