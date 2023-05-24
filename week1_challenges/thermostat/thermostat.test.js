@@ -29,4 +29,9 @@ describe('Thermostat', () => {
         thermostat.up();
         expect(thermostat.getTemperature()).toBe(25)
     })
+
+    it('should resent the thermostat', () => {
+        thermostat.reset();
+        expect(thermostat.getTemperature()).toBe(20)
+    })
 })
