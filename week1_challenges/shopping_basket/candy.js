@@ -9,6 +9,10 @@ class Candy {
         return this.name;
     }
 
+    getPrice() {
+        return this.price;
+    }
+
 }
 
 module.exports = Candy;
