@@ -36,4 +36,18 @@ describe('ShoppingBasket', () => {
         basket.addItem(mockSkittle);
         expect(basket.getTotalPrice()).toBe(12.97);
     });
+
+    it('applies a discount to the total price', () => {
+        const basket = new ShoppingBasket();
+
+        const mockMars = {
+            getName: () => 'Mars',
+            getPrice: () => 4.99
+        };
+
+        basket.addItem(mockMars);
+        expect(basket.getTotalPrice()).toBe(4.99)
+        basket.applyDiscount(1)
+        expect(basket.getTotalPrice()).toBe(3.99)
+    })
 });

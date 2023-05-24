@@ -2,7 +2,8 @@ class ShoppingBasket {
 
     constructor() {
         this.basket = [];
-    }
+        this.discount = 0;
+    }    
 
     addItem(item) {
         this.basket.push(item);
@@ -13,7 +14,11 @@ class ShoppingBasket {
         this.basket.map((item) => {
             result += item.getPrice()    
         })
-        return result
+        return result - this.discount
+    }
+
+    applyDiscount(discount) {
+        this.discount = discount;
     }
 }
 
