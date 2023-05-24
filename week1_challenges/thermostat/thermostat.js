@@ -1,25 +1,29 @@
 class Thermostat {
 
     constructor() {
-        this.temperature = 20
+        this.temperature = 20;
+        this.powerSavingMode = false;
     }
 
     getTemperature() {
-        return this.temperature
+        return this.temperature;
     }
 
     up() {
-        this.temperature++;
+        if (this.temperature >= 25 && this.powerSavingMode === true) {
+            return this.temperature = 25         
+        } else {
+            this.temperature++  
+        }
     }
 
     down() {
         this.temperature--;
     }
 
-    setPowerSavingMode() {
-
+    setPowerSavingMode(status) {
+        this.powerSavingMode = status;
     }
-
 }
 
 module.exports = Thermostat;

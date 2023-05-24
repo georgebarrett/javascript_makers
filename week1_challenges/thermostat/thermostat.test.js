@@ -11,11 +11,22 @@ describe('Thermostat', () => {
         thermostat.up();
         thermostat.up();
         expect(thermostat.getTemperature()).toBe(22)
-    })
+    });
 
     it('should return 18 degrees,', () => {
         thermostat.down();
         thermostat.down();
         expect(thermostat.getTemperature()).toBe(20)
+    });
+
+    it('it should be 25 instead of 26 due to power saving mode', () => {
+        thermostat.setPowerSavingMode(true);
+        thermostat.up();
+        thermostat.up();
+        thermostat.up();
+        thermostat.up();
+        thermostat.up();
+        thermostat.up();
+        expect(thermostat.getTemperature()).toBe(25)
     })
 })
