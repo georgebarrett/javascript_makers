@@ -12,4 +12,10 @@ describe('Thermostat', () => {
         thermostat.up();
         expect(thermostat.getTemperature()).toBe(22)
     })
+
+    it('should return 18 degrees,', () => {
+        thermostat.down();
+        thermostat.down();
+        expect(thermostat.getTemperature()).toBe(20)
+    })
 })

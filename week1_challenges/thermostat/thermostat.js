@@ -13,7 +13,7 @@ class Thermostat {
     }
 
     down() {
-
+        this.temperature--;
     }
 
     setPowerSavingMode() {
