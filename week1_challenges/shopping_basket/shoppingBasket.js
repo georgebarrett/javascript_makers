@@ -1,17 +1,20 @@
 class ShoppingBasket {
 
     constructor() {
-        this.item = [];
+        this.basket = [];
     }
 
-    addItem() {
-
+    addItem(item) {
+        this.basket.push(item);
     }
 
     getTotalPrice() {
-        return 0
+        let result = 0
+        this.basket.map((item) => {
+            result += item.getPrice()    
+        })
+        return result
     }
-
 }
 
 module.exports = ShoppingBasket;
