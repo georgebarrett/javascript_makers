@@ -1,5 +1,5 @@
-const fetchPokemon = (name) => {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+const fetchPokemon = (pokemon) => {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     .then((response) => response.json())
     .then((data) => {
         return {
