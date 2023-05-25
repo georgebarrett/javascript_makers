@@ -1,17 +1,21 @@
+const fetchPokemon = require('./api');
+
 class Pokedex {
 
     constructor() {
         this.pokemons = [];
     }
 
-    catch() {
-
-    }
-
     all() {
         return this.pokemons;
     }
 
+    async catch(pokemonName) {
+        return fetchPokemon(pokemonName)
+        .then(pokemon => {
+            this.pokemons.push(pokemon)
+        })
+    }
 }
 
 module.exports = Pokedex;
