@@ -26,6 +26,11 @@ app.post('/down', (req, res) => {
     res.send(null)
 });
 
+app.delete('/temperature', (req, res) => {
+    thermostat.reset();
+    res.send(null)
+});
+
 console.log(`Server listening on localhost:${port}`);
 app.listen(port);
 
