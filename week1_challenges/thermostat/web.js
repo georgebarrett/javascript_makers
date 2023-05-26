@@ -9,6 +9,13 @@ app.get('/', (req, res) => {
     res.send('Thermostat homepage!')
 });
 
+app.get('/temperature', (req, res) => {
+    temperatureObject = {
+        "temperature":thermostat.getTemperature()
+    };
+    res.send(JSON.stringify(temperatureObject))
+});
+
 console.log(`Server listening on localhost:${port}`);
 app.listen(port)
 
