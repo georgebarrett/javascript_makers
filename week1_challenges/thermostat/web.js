@@ -19,8 +19,13 @@ app.get('/temperature', (req, res) => {
 app.post('/up', (req, res) => {
     thermostat.up();
     res.send(null)
-})
+});
+
+app.post('/down', (req, res) => {
+    thermostat.down();
+    res.send(null)
+});
 
 console.log(`Server listening on localhost:${port}`);
-app.listen(port)
+app.listen(port);
 
