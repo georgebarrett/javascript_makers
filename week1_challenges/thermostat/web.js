@@ -16,6 +16,11 @@ app.get('/temperature', (req, res) => {
     res.send(JSON.stringify(temperatureObject))
 });
 
+app.post('/up', (req, res) => {
+    thermostat.up();
+    res.send(null)
+})
+
 console.log(`Server listening on localhost:${port}`);
 app.listen(port)
 
